@@ -5,14 +5,9 @@ let nextId = Date.now()
 
 export function useTodos() {
   const [todos, setTodos] = useState(loadTodos)
-  const [filter, setFilter] = useState('all') // 'all' | 'active' | 'done'
-  const [priorityFilter, setPriorityFilter] = useState('all') // 'all' | 'high' | 'medium' | 'low'
+  const [filter, setFilter] = useState('all')
+  const [priorityFilter, setPriorityFilter] = useState('all')
   const [categoryFilter, setCategoryFilter] = useState('all')
-
-  const sync = useCallback((next) => {
-    setTodos(next)
-    saveTodos(next)
-  }, [])
 
   const addTodo = useCallback(({ title, priority, category }) => {
     const todo = {
@@ -21,6 +16,7 @@ export function useTodos() {
       priority: priority || 'medium',
       category: category || '默认',
       done: false,
+      pomodoroCount: 0,
       createdAt: Date.now(),
     }
     setTodos((prev) => {
@@ -41,6 +37,16 @@ export function useTodos() {
   const removeTodo = useCallback((id) => {
     setTodos((prev) => {
       const next = prev.filter((t) => t.id !== id)
+      saveTodos(next)
+      return next
+    })
+  }, [])
+
+  const incrementPomodoroCount = useCallback((id) => {
+    setTodos((prev) => {
+      const next = prev.map((t) =>
+        t.id === id ? { ...t, pomodoroCount: t.pomodoroCount + 1 } : t
+      )
       saveTodos(next)
       return next
     })
@@ -67,5 +73,6 @@ export function useTodos() {
     addTodo,
     toggleTodo,
     removeTodo,
+    incrementPomodoroCount,
   }
 }

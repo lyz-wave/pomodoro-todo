@@ -21,6 +21,9 @@ export default function TodoItem({ todo, onToggle, onRemove }) {
             {PRIORITY_LABELS[todo.priority]}
           </span>
           <span className="category-tag">{todo.category}</span>
+          {todo.pomodoroCount > 0 && (
+            <span className="pomodoro-badge">{todo.pomodoroCount}</span>
+          )}
         </div>
       </div>
 

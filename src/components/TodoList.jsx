@@ -1,6 +1,5 @@
 import TodoForm from './TodoForm'
 import TodoItem from './TodoItem'
-import { useTodos } from '../hooks/useTodos'
 
 const FILTERS = [
   { value: 'all', label: '全部' },
@@ -15,26 +14,19 @@ const PRIORITY_FILTERS = [
   { value: 'low', label: '低' },
 ]
 
-export default function TodoList() {
-  const {
-    todos,
-    filter,
-    setFilter,
-    priorityFilter,
-    setPriorityFilter,
-    categoryFilter,
-    setCategoryFilter,
-    categories,
-    addTodo,
-    toggleTodo,
-    removeTodo,
-  } = useTodos()
-
+export default function TodoList({
+  todos,
+  filter, setFilter,
+  priorityFilter, setPriorityFilter,
+  categoryFilter, setCategoryFilter,
+  categories,
+  onAdd, onToggle, onRemove,
+}) {
   return (
     <div className="todo-card">
       <h2 className="todo-title-header">待办事项</h2>
 
-      <TodoForm categories={categories} onAdd={addTodo} />
+      <TodoForm categories={categories} onAdd={onAdd} />
 
       <div className="filters">
         <div className="filter-group">
@@ -88,7 +80,7 @@ export default function TodoList() {
       ) : (
         <ul className="todo-list">
           {todos.map((t) => (
-            <TodoItem key={t.id} todo={t} onToggle={toggleTodo} onRemove={removeTodo} />
+            <TodoItem key={t.id} todo={t} onToggle={onToggle} onRemove={onRemove} />
           ))}
         </ul>
       )}
