@@ -90,6 +90,11 @@
   min-height: 0;
   overflow-y: auto;
   padding-bottom: 24px;
+  scrollbar-width: none;
+}
+
+.app-main::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width: 720px) {
