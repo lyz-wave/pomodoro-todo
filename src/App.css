@@ -1,0 +1,409 @@
+/* ===== Layout ===== */
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.app-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.title-icon {
+  font-size: 1.8rem;
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 700px) {
+  .app-main {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+/* ===== Card ===== */
+.timer-card,
+.todo-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== Timer ===== */
+.timer-title,
+.todo-title-header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.timer-mode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.mode-badge {
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.mode-badge.focus { background: #e74c3c; }
+.mode-badge.break { background: #27ae60; }
+
+.cycles-count {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.timer-ring-container {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin: 0 auto 20px;
+}
+
+.timer-ring {
+  width: 100%;
+  height: 100%;
+}
+
+.timer-progress {
+  transition: stroke-dashoffset 0.5s linear;
+}
+
+.timer-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.time-text {
+  display: block;
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #2c2c2c;
+  letter-spacing: 2px;
+}
+
+.mode-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #999;
+  margin-top: 4px;
+}
+
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-start {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.btn-start:hover { background: #d44235; }
+
+.btn-pause {
+  background: #f39c12;
+  color: #fff;
+}
+
+.btn-pause:hover { background: #e08e0b; }
+
+.btn-reset {
+  background: #f0f0f0;
+  color: #555;
+}
+
+.btn-reset:hover { background: #e0e0e0; }
+
+.btn-add {
+  background: #e74c3c;
+  color: #fff;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+}
+
+.btn-add:hover { background: #d44235; }
+
+/* ===== Todo Form ===== */
+.todo-form {
+  margin-bottom: 16px;
+}
+
+.todo-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s;
+  margin-bottom: 8px;
+}
+
+.todo-input:focus {
+  border-color: #e74c3c;
+}
+
+.todo-form-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.priority-select {
+  display: flex;
+  gap: 4px;
+}
+
+.priority-option {
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  color: #fff;
+  opacity: 0.45;
+}
+
+.priority-option.active { opacity: 1; }
+.priority-option.high { background: #e74c3c; }
+.priority-option.medium { background: #f39c12; }
+.priority-option.low { background: #3498db; }
+
+.category-input-wrap {
+  flex: 1;
+  min-width: 80px;
+}
+
+.category-input {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.category-input:focus {
+  border-color: #e74c3c;
+}
+
+/* ===== Filters ===== */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.filter-group {
+  display: flex;
+  gap: 4px;
+}
+
+.filter-btn {
+  border: 1.5px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  background: #fff;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filter-btn:hover {
+  border-color: #ccc;
+  color: #555;
+}
+
+.filter-btn.active {
+  background: #e74c3c;
+  border-color: #e74c3c;
+  color: #fff;
+}
+
+/* ===== Todo List ===== */
+.todo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fafafa;
+  transition: background 0.15s;
+}
+
+.todo-item:hover {
+  background: #f3f3f3;
+}
+
+.todo-item.done .todo-title {
+  text-decoration: line-through;
+  color: #bbb;
+}
+
+.todo-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.todo-title {
+  display: block;
+  font-size: 0.9rem;
+  color: #2c2c2c;
+  word-break: break-word;
+}
+
+.todo-meta {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.priority-tag,
+.category-tag {
+  font-size: 0.7rem;
+  padding: 1px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.priority-tag.high { background: #fde8e8; color: #c0392b; }
+.priority-tag.medium { background: #fef3e0; color: #d68910; }
+.priority-tag.low { background: #e8f4fd; color: #2471a3; }
+
+.category-tag {
+  background: #f0f0f0;
+  color: #888;
+}
+
+/* ===== Checkbox ===== */
+.checkbox {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #d0d0d0;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.15s;
+  padding: 0;
+}
+
+.checkbox:hover { border-color: #e74c3c; }
+
+.checkbox.checked {
+  background: #e74c3c;
+  border-color: #e74c3c;
+}
+
+.checkbox svg {
+  width: 14px;
+  height: 14px;
+  color: #fff;
+}
+
+/* ===== Delete ===== */
+.btn-delete {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.btn-delete:hover {
+  color: #e74c3c;
+  background: #fde8e8;
+}
+
+.btn-delete svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===== Empty State ===== */
+.empty-state {
+  text-align: center;
+  padding: 32px 0;
+  color: #ccc;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.empty-state span {
+  font-size: 0.8rem;
+}
