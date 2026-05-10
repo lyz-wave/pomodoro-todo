@@ -26,13 +26,13 @@ export default function PomodoroTimer() {
       </div>
 
       <div className="timer-ring-container">
-        <svg className="timer-ring" viewBox="0 0 320 320">
+        <svg className={`timer-ring ${!isFocus ? 'break-ring' : ''}`} viewBox="0 0 320 320">
           <circle
             cx="160"
             cy="160"
             r={RADIUS}
             fill="none"
-            stroke="#e8e8e8"
+            stroke="rgba(255,255,255,0.06)"
             strokeWidth="12"
           />
           <circle
@@ -40,7 +40,7 @@ export default function PomodoroTimer() {
             cy="160"
             r={RADIUS}
             fill="none"
-            stroke={isFocus ? '#e74c3c' : '#27ae60'}
+            stroke={isFocus ? '#f59e0b' : '#10b981'}
             strokeWidth="12"
             strokeDasharray={CIRCUMFERENCE}
             strokeDashoffset={dashOffset}
