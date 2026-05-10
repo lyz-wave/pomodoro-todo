@@ -45,7 +45,7 @@ function createFloatingWindow() {
 
   floatingWindow = new BrowserWindow({
     width: 220,
-    height: 260,
+    height: 270,
     x: screenW - 230,
     y: 60,
     alwaysOnTop: true,

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const RADIUS = 80
+const RADIUS = 65
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS
 
 function formatTime(seconds) {
@@ -52,17 +52,17 @@ export default function FloatingTimer() {
       </div>
 
       <div className="floating-ring-container">
-        <svg className="floating-ring" viewBox="0 0 200 200">
-          <circle cx="100" cy="100" r={RADIUS} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="8" />
+        <svg className="floating-ring" viewBox="0 0 160 160">
+          <circle cx="80" cy="80" r={RADIUS} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="7" />
           <circle
-            cx="100" cy="100" r={RADIUS}
+            cx="80" cy="80" r={RADIUS}
             fill="none"
             stroke={isFocus ? '#f59e0b' : '#10b981'}
-            strokeWidth="8"
+            strokeWidth="7"
             strokeDasharray={CIRCUMFERENCE}
             strokeDashoffset={dashOffset}
             strokeLinecap="round"
-            transform="rotate(-90 100 100)"
+            transform="rotate(-90 80 80)"
             className="timer-progress"
           />
         </svg>

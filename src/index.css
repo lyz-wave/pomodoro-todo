@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
 html {
   font-size: 16px;
 }
@@ -14,8 +19,6 @@ body {
   font-family: 'PingFang SC', 'Microsoft YaHei', -apple-system, sans-serif;
   background: #171412;
   color: #e0dcd6;
-  min-height: 100vh;
-  overflow-x: hidden;
 }
 
 /* Warm noise texture overlay */
@@ -44,7 +47,8 @@ body::after {
 }
 
 #root {
-  min-height: 100vh;
+  height: 100%;
+  overflow: hidden;
   position: relative;
   z-index: 1;
 }
