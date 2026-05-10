@@ -1,5 +1,5 @@
 {
-  "name": "pomodoro-todo",
+  "name": "pomelo",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -11,8 +11,8 @@
     "dist": "vite build && electron-builder"
   },
   "build": {
-    "appId": "com.pomodoro.todo",
-    "productName": "Pomodoro Todo",
+    "appId": "com.pomelo.app",
+    "productName": "Pomelo",
     "directories": {
       "output": "release"
     },

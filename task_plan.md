@@ -1,7 +1,7 @@
-# Task Plan: 番茄钟 + Todo List 应用 v2
+# Task Plan: Pomelo v2
 
 ## 项目概述
-React + Vite + Electron 番茄钟与待办事项集成应用。v2 新增6个功能模块。
+React + Vite + Electron 番茄钟与待办事项桌面应用 Pomelo。v2 新增6个功能模块。
 
 ## 技术决策
 | 项目 | 选择 |

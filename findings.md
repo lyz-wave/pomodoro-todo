@@ -1,4 +1,4 @@
-# Findings: 番茄钟 + Todo List 应用 v2
+# Findings: Pomelo v2
 
 ## v1 技术调研
 - Vite + React 项目手动创建（非空目录导致脚手架交互取消）

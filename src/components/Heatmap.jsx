@@ -10,7 +10,7 @@ function getCellColor(count) {
 
 export default function Heatmap({ data }) {
   if (!data || data.length === 0) {
-    return <div className="heatmap-empty">暂无数据，完成番茄钟后这里会显示热力图</div>
+    return <div className="heatmap-empty">暂无数据，完成专注后这里会显示热力图</div>
   }
 
   const totalWeeks = Math.ceil(data.length / 7)

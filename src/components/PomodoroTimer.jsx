@@ -27,7 +27,7 @@ export default function PomodoroTimer({
 
   return (
     <div className="timer-card">
-      <h2 className="timer-title">番茄钟</h2>
+      <h2 className="timer-title">Pomelo</h2>
       <div className="timer-mode">
         <span className={`mode-badge ${isFocus ? 'focus' : 'break'}`}>
           {isFocus ? '专注' : '休息'}

@@ -77,7 +77,7 @@ export default function App() {
       <header className="app-header">
         <h1 className="app-title">
           <span className="title-icon">🍅</span>
-          番茄钟 + Todo
+          Pomelo
         </h1>
         <button className="floating-toggle-btn" onClick={handleToggleFloating} title="切换悬浮窗">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -93,7 +93,7 @@ export default function App() {
           className={`tab-btn ${activeTab === 'timer' ? 'active' : ''}`}
           onClick={() => setActiveTab('timer')}
         >
-          番茄钟
+          Pomelo
         </button>
         <button
           className={`tab-btn ${activeTab === 'stats' ? 'active' : ''}`}

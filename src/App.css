@@ -367,7 +367,7 @@
   border-color: rgba(245, 158, 11, 0.4);
 }
 
-/* Pomodoro Badge */
+/* Pomodoro Badge (pomodoroCount display) */
 .pomodoro-badge {
   font-size: 0.68rem;
   padding: 1px 7px;

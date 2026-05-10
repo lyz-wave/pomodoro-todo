@@ -10,7 +10,7 @@ function createWindow() {
     height: 720,
     minWidth: 720,
     minHeight: 480,
-    title: 'Pomodoro + Todo',
+    title: 'Pomelo',
     webPreferences: {
       preload: path.join(__dirname, 'preload.cjs'),
       contextIsolation: true,

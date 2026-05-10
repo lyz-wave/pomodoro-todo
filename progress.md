@@ -1,8 +1,8 @@
-# Progress Log: 番茄钟 + Todo List 应用
+# Progress Log: Pomelo
 
 ## Session 1: 2026-05-10 — 项目创建
 - 需求确认：React + Vite，标准番茄钟，优先级+分类 Todo，localStorage
-- Phase 1-4 实现完成：项目初始化、番茄钟核心、Todo List、布局样式
+- Phase 1-4 实现完成：项目初始化、计时器核心、Todo List、布局样式
 - 暗色琥珀主题重新设计（frontend-design skill）
 - Electron 打包：NSIS 安装器 + 便携版
 - GitHub 发布：v1.0.0
